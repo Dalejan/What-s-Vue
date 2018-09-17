@@ -100,11 +100,79 @@
 </template>
 
 <template slot="example">
-<ul id="example-1">
+<ul >
   <li v-for="item in items">
     {{ item.message }}
   </li>
 </ul>
+</template>
+          </Feature>
+
+          <!--Event handling-->
+<Feature name="Event handeling">
+          <template slot="description">
+Podemos usar la directiva v-on para escuchar eventos DOM y ejecutar JavaScript cuando se desencadenen. Esta directiva permite interacciones principalmente de botones. Puede ser abreviada haciendo uso de '@' en lugar de v-on:.
+</template>
+
+<template slot="code">
+  &lt;template&gt;
+   &lt;button&gt;v-on:click="counter += 1" &lt;/button&gt; 
+   &lt;button&gt;@click="clearNum()" &lt;/button&gt; 
+   &lt;p&gt; El botón ha sido clickeado &#123; &#123;counter&#125; &#125;&lt;/p&gt; 
+  &lt;/template&gt; 
+
+   &lt;script&gt;
+   data(){
+     return counter:0
+   },
+   methods:{
+     clearNum(){
+       this.counter =0;
+     }
+   }
+   &lt;/script&gt;
+</template>
+
+<template slot="example">
+<div >
+  <button v-on:click="counter += 1">Añadir 1</button>  
+  <button @click="clearNum()">Limpiar</button>
+
+  <p>El botón ha sido clickeado {{ counter }} veces.</p>
+</div>
+</template>
+          </Feature>
+
+          <!--Computed properties-->
+<Feature name="Computed properties">
+          <template slot="description"> Al tratar de insertar código en el template que sea demasiado complejo, puede alentar nuestro programa y puede resultar ser engorroso y desordenado. Usar métodos computados resuelve este problema. Básicamente hace un binding del valor retornado de una función computada.
+</template>
+
+<template slot="code">
+  &lt;template&gt;
+   &lt;input&gt;v-model="text"&lt;/input&gt; 
+   &lt;p&gt; Mensaje &#123; &#123;text&#125; &#125;&lt;/p&gt; 
+   &lt;p&gt; Mensaje Voltiao' &#123; &#123;reversedText&#125; &#125;&lt;/p&gt; 
+  &lt;/template&gt; 
+
+   &lt;script&gt;
+   data(){
+     return text:""
+   },
+   computed(){
+     reversedText(){
+      return this.text.split('').reverse().join('');
+    }
+   }
+   &lt;/script&gt;
+</template>
+
+<template slot="example">
+<div>
+  <input v-model="text">
+  <p>Mensaje: "{{ text }}"</p>
+  <p>Mensaje Voltiao' "{{ reversedText }}"</p>
+</div>
 </template>
           </Feature>
 
@@ -135,8 +203,15 @@ export default {
       items:[
          { message: 'Foo' },
       { message: 'Bar' }
-      ]
+      ],
+      counter: 0,
+      text:""
     };
+  },
+  computed:{
+    reversedText(){
+      return this.text.split('').reverse().join('');
+    }
   },
   components: {
     Header,
@@ -160,6 +235,9 @@ export default {
     },
     switchBool(){
       this.showRender = !this.showRender;
+    },
+    clearNum(){
+      this.counter =0;
     }
   }
 };
