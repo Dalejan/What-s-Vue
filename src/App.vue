@@ -14,12 +14,13 @@ export default {
 };
 </script>
 <style>
-*{
+* {
   box-sizing: border-box;
 }
 html {
   font-size: 1.2vw;
 }
+
 body {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -30,6 +31,10 @@ body {
   overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
 ::-webkit-scrollbar {
   width: 3px;
   background-color: #f5f5f5;

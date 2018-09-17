@@ -1,16 +1,18 @@
 <template>
   <div class = "navBar">
+      
       <div class="item active">
-          Descripción
+         <a href="#descripcion">Descripción </a>
       </div>
       <div class="item">
-         Ventajas
+        <a href="#ventajas">Ventajas </a>
       </div>
       <div class="item">
-          Desventajas
+          <a href="#desventajas">Desventajas </a>
       </div>
       <div class="item">
-          Features
+          <a href="#casos">Casos de uso</a>
+          
       </div>
   </div>
 </template>

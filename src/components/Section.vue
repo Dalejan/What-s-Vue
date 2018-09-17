@@ -13,7 +13,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .section-content {
-  padding: 2% 5%;
+  padding: 3rem 5% 0 5%;
   max-width: 1280px;
   width: 100%;
   min-height: 10rem;
