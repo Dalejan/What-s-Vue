@@ -26,14 +26,14 @@ export default {
   background: transparent;
 }
 .header .item {
-  display:inline;
-  padding-right: 4%;
+  display: inline;
+  margin-right: 4%;
   color: rgba(255, 255, 255, 0.3);
   transition: background 400ms ease-in-out;
 }
 .header .item:hover {
-    
   color: rgba(255, 255, 255, 0.8);
-  cursor:pointer;
+  cursor: pointer;
+  border-bottom: 3px solid #42b983;
 }
 </style>
