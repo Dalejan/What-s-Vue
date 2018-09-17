@@ -15,6 +15,8 @@
       <Section >    
       </Section>
       <Section >    
+              <Feature name="Paco"/>
+
       </Section>
      </div>
   </div>
@@ -26,12 +28,15 @@ import Header from "../components/Header.vue";
 import NavBar from "../components/NavBar.vue"
 import Section from "../components/Section.vue"
 import Sections from "../components/Section.vue"
+import Feature from "../components/FeatureComponent/Feature.vue"
+
 export default {
   name: "Home",
   components: {
     Header,
     NavBar,
-    Section
+    Section,
+    Feature
   }
 };
 </script>

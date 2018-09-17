@@ -10,7 +10,7 @@
           Desventajas
       </div>
       <div class="item">
-          Casos de uso
+          Features
       </div>
   </div>
 </template>
