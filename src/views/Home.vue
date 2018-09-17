@@ -1,19 +1,18 @@
 <template>
   
-  <div class = "container">
-      <div class="top-container">
+  <div class = "container"   >
+      <div class="top-container" >
              <Header />
              <div class="content">
                 <img alt="Vue logo" src="../assets/logo.png">
                 <h1> ¿Qué es VueJS?</h1>
              </div>
      </div>
-     <div class="bottom-container"></div>
-     <NavBar />
+     <NavBar v-bind:style="[scrolledNavBarStyle]"/>
     
-    <div class="sections-container">
-      <Section >    
-        <TextContent title="Mi título" subtitle="Mi subtítulo" >
+    <div class="sections-container" >
+        <Section id="descripcion" >  
+          <TextContent title="Mi título" subtitle="Mi subtítulo" >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque lacus eget arcu fermentum fermentum. Nullam mi tellus, 
           consequat vestibulum ipsum sed, suscipit viverra dolor. Nam ac ornare ex. Mauris vitae enim erat. Integer faucibus pulvinar lectus, 
           vitae fermentum lectus. Ut auctor pretium enim eu ullamcorper. Fusce faucibus ultricies nibh, in imperdiet risus pharetra ullamcorper.
@@ -21,9 +20,16 @@
           Quisque ornare porta orci. Vestibulum ultricies elementum mi et viverra. Aliquam fermentum, enim sit amet consectetur ullamcorper, 
           dolor sapien ultricies nisl, non suscipit neque mauris a ex.
         </TextContent>
-      </Section>
-      <Section >    
-      </Section>
+        </Section>
+        <Section id="ventajas" > 
+          Ventajas
+        </Section>
+        <Section  id="desventajas" > 
+          Desventajas
+        </Section>
+        <Section id="casos" > 
+          Casos de uso
+        </Section>
      </div>
   </div>
    
@@ -38,18 +44,43 @@ import TextContent from "../components/Text-Content.vue"
 
 export default {
   name: "Home",
+  data() {
+    return {
+      scrolledNavBarStyle : {
+        position: 'relative',
+        background: 'white',
+        top: 0,
+        bottom: 0
+      }
+    };
+  },
   components: {
     Header,
     NavBar,
     Section,
     TextContent
+  },
+  mounted() {
+    window.addEventListener("scroll", this.navBarScrollHandler);
+  },
+  destroyed: () => {
+    window.removeEventListener("scroll", this.navBarScrollHandler);
+  },
+  methods: {
+    navBarScrollHandler() {
+      if (window.scrollY > window.innerHeight) {
+        this.scrolledNavBarStyle.position = "fixed"
+      }
+      else{
+        this.scrolledNavBarStyle.position = "relative"
+      }
+    }
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 .container {
   width: 100vw;
 }
@@ -61,7 +92,7 @@ export default {
   height: calc(100vh - 3rem);
   color: white;
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
@@ -70,10 +101,9 @@ export default {
   font-size: 4rem;
 }
 .container .sections-container {
-  width:100%;
-  display:flex;
+  width: 100%;
+  display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 </style>
