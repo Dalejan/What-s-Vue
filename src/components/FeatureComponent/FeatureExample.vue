@@ -1,15 +1,16 @@
 <template>
-<div >
-    Ejemplo
-</div>
+    <div>
+
+        <div>
+            <slot></slot>
+        </div>
+    </div>
 </template>
 
 <script>
-
-export default{
-    name:"FeatureExample",
-
-}
+export default {
+  name: "FeatureDescription"
+};
 </script>
 
 <style>

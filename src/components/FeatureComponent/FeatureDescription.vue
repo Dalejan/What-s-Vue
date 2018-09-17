@@ -1,21 +1,22 @@
 <template>
-
-    <div class="feature-title">
-        {{name}}
     <div>
-    </div>
-    Descripción
+
+        <div>
+            <slot></slot>
+        </div>
     </div>
 </template>
 
 <script>
-
-export default{
-    name:"FeatureDescription",
-    props: {name,}  
-}
+export default {
+  name: "FeatureDescription",
+  props: {
+    name
+  }
+};
 </script>
 
-<style>
-
+<style scoped>
+.feature-title {
+}
 </style>
