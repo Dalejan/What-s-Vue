@@ -12,7 +12,14 @@
     
     <div class="sections-container" >
         <Section id="descripcion" >  
-          Descripción  
+          <TextContent title="Mi título" subtitle="Mi subtítulo" >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque lacus eget arcu fermentum fermentum. Nullam mi tellus, 
+          consequat vestibulum ipsum sed, suscipit viverra dolor. Nam ac ornare ex. Mauris vitae enim erat. Integer faucibus pulvinar lectus, 
+          vitae fermentum lectus. Ut auctor pretium enim eu ullamcorper. Fusce faucibus ultricies nibh, in imperdiet risus pharetra ullamcorper.
+          Nam vestibulum ipsum erat, sed imperdiet lacus elementum non. Quisque sed felis faucibus, pharetra diam vitae, gravida lectus. 
+          Quisque ornare porta orci. Vestibulum ultricies elementum mi et viverra. Aliquam fermentum, enim sit amet consectetur ullamcorper, 
+          dolor sapien ultricies nisl, non suscipit neque mauris a ex.
+        </TextContent>
         </Section>
         <Section id="ventajas" > 
           Ventajas
@@ -30,8 +37,10 @@
 
 <script>
 import Header from "../components/Header.vue";
-import NavBar from "../components/NavBar.vue";
-import Section from "../components/Section.vue";
+import NavBar from "../components/NavBar.vue"
+import Section from "../components/Section.vue"
+import Sections from "../components/Section.vue"
+import TextContent from "../components/Text-Content.vue"
 
 export default {
   name: "Home",
@@ -48,7 +57,8 @@ export default {
   components: {
     Header,
     NavBar,
-    Section
+    Section,
+    TextContent
   },
   mounted() {
     window.addEventListener("scroll", this.navBarScrollHandler);
