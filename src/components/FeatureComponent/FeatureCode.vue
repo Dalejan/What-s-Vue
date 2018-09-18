@@ -24,6 +24,8 @@ pre {
   background: black;
   margin: 0px;
   border-radius: 10px;
+  overflow: auto;
+  height: 40vh;
 }
 
 code {

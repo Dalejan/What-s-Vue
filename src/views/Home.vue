@@ -10,20 +10,43 @@
     <NavBar v-bind:style="[scrolledNavBarStyle]" />
   
     <div class="sections-container">
-      <Section id="descripcion">
-        Descripción
+      <Section id="descripcion" style="display: flex; justify-content:center;">
+         <TextContent title="Qué es VueJS?">
+          Vue.js es un framework progresivo (JavaScript) destinado a la creación de interfaces de usuario. 
+          Fue desarrollado inicialmente por Evan You (ex-desarrollador de Google) como una herramienta de prototipado, aparece en el año 2014
+          y en la actualidad cuenta con más de 190 personas contribuyendo en la rama core del proyecto. 
+        </TextContent>
       </Section>
       <Section id="ventajas">
-        Ventajas
+        <TextContent title= "Ventajas"/>
+        <ul> 
+          <li>Integra lo mejor de frameworks populares como React, Angular y Ember. Desechando todas las cosas que no aportan al desarrollador.</li>
+          <li>Dom Virtual al igual que React, se mantiene un dom en código antes de pintarlo en la pantalla, lo que mejora el rendimiento de la aplicación.</li>
+          <li>Componentes reactivos.</li>
+          <li>Soporta two-way data binding al igual que Angular lo que sincroniza automáticamente el modelo con el DOM.</li>
+          <li>Curva de aprendizaje baja.</li>
+          <li>En caso de actualizaciones, Vue solo actualiza aquellos componentes que lo requieran, dejando los demás intactos.</li>
+          <li>En el modelo MVC se encarga principalmente de la vista</li>
+        </ul>
       </Section>
       <Section id="desventajas">
-        Desventajas
+        <TextContent title= "desVentajas"/>
+        <ul> 
+          <li>El equipo de desarrollo es relativamente bajo comparado con frameworks como React (193 Vue y 1240 React).</li>
+          <li>Menos ofertas laborales que otros frameworks populares.</li>
+          <li>Sus herramientas para aplicaciones móviles se encuentran aún en desarrollo.</li>
+          <li>No cuenta con el soporte a futuro de alguna compañía grande como lo son Google para angular y Facebook para React.</li>
+        </ul>
       </Section>
       <Section id="casos">
-        Casos de uso
         <!--Data binding-->
-        <Feature name="Data Binding">
-          <template slot="description">Puede usar la directiva v-model para crear enlaces de datos bidireccionales en la entrada de formulario, área de texto y elementos seleccionados. Selecciona automáticamente la forma correcta de actualizar el elemento en función del tipo de entrada. Aunque un poco mágico, el modelo v es esencialmente azúcar de sintaxis para actualizar los datos de los eventos de entrada del usuario, además de un cuidado especial para algunos casos extremos.
+        <Feature >
+                     
+
+          <template slot="description">
+             <TextContent title="Data binding">Puede usar la directiva v-model para crear enlaces de datos bidireccionales en la entrada de formulario, área de texto y elementos seleccionados. Selecciona automáticamente la forma correcta de actualizar el elemento en función del tipo de entrada. Aunque un poco mágico, el modelo v es esencialmente azúcar de sintaxis para actualizar los datos de los eventos de entrada del usuario, además de un cuidado especial para algunos casos extremos.
+            </TextContent>
+
 </template>
 
 <template slot="code">
@@ -47,9 +70,10 @@
           </Feature>
 
           <!--Conditional rendering--> 
-        <Feature name="Conditional rendering">
-          <template slot="description">Para renderizar dependiendo de una varialbe booleana se hace uso de las directivas v-if v-else-if y v-else. Al ser directivas solamente pueden ser asignadas a un único elemento. El efecto de v-if puede ser logrado con v-show, la diferencia es que v-show juega con las propiedades css del elemento, mientras que v-if realmente muestra y oculta totalmente el elemento.
-            
+        <Feature>
+          <template slot="description">
+            <TextContent title="Conditional rendering"> Para renderizar dependiendo de una varialbe booleana se hace uso de las directivas v-if v-else-if y v-else. Al ser directivas solamente pueden ser asignadas a un único elemento. El efecto de v-if puede ser logrado con v-show, la diferencia es que v-show juega con las propiedades css del elemento, mientras que v-if realmente muestra y oculta totalmente el elemento.
+            </TextContent>
           </template>
 <template slot="code">
   &lt;template v-if="showRender === true"&gt;
@@ -81,10 +105,12 @@
           </Feature>
 
           <!--List rendering-->
-        <Feature name="List rendering">
+        <Feature >
           <template slot="description">
+            <TextContent title="List rendering">
     Podemos usar la directiva v-for para generar una lista de elementos basada en una matriz. La directiva v-for requiere una sintaxis especial en forma de elemento en los elementos, donde los elementos son la matriz de datos de origen y el elemento es un alias para el elemento de la matriz que se itera en:
-</template>
+    </TextContent>
+</template> 
 
 <template slot="code">
   &lt;template&gt;
@@ -109,9 +135,11 @@
           </Feature>
 
           <!--Event handling-->
-<Feature name="Event handeling">
+<Feature >
           <template slot="description">
+            <TextContent title="Event handling">
 Podemos usar la directiva v-on para escuchar eventos DOM y ejecutar JavaScript cuando se desencadenen. Esta directiva permite interacciones principalmente de botones. Puede ser abreviada haciendo uso de '@' en lugar de v-on:.
+  </TextContent>
 </template>
 
 <template slot="code">
@@ -144,8 +172,12 @@ Podemos usar la directiva v-on para escuchar eventos DOM y ejecutar JavaScript c
           </Feature>
 
           <!--Computed properties-->
-<Feature name="Computed properties">
-          <template slot="description"> Al tratar de insertar código en el template que sea demasiado complejo, puede alentar nuestro programa y puede resultar ser engorroso y desordenado. Usar métodos computados resuelve este problema. Básicamente hace un binding del valor retornado de una función computada.
+<Feature >
+          <template slot="description"> 
+         <TextContent title="Computed properties">
+            Al tratar de insertar código en el template que sea demasiado complejo, puede alentar nuestro programa y puede resultar ser engorroso y desordenado. Usar métodos computados resuelve este problema. Básicamente hace un binding del valor retornado de una función computada.
+        </TextContent>
+
 </template>
 
 <template slot="code">
@@ -182,11 +214,11 @@ Podemos usar la directiva v-on para escuchar eventos DOM y ejecutar JavaScript c
 </template>
  
 <script>
-
 import Header from "../components/Header.vue";
 import NavBar from "../components/NavBar.vue";
 import Section from "../components/Section.vue";
 import Feature from "../components/FeatureComponent/Feature.vue";
+import TextContent from "../components/Text-Content.vue";
 
 export default {
   name: "Home",
@@ -200,24 +232,25 @@ export default {
       },
       message: " ",
       showRender: true,
-      items:[
-         { message: 'Foo' },
-      { message: 'Bar' }
-      ],
+      items: [{ message: "Foo" }, { message: "Bar" }],
       counter: 0,
-      text:""
+      text: ""
     };
   },
-  computed:{
-    reversedText(){
-      return this.text.split('').reverse().join('');
+  computed: {
+    reversedText() {
+      return this.text
+        .split("")
+        .reverse()
+        .join("");
     }
   },
   components: {
     Header,
     NavBar,
     Section,
-    Feature
+    Feature,
+    TextContent
   },
   mounted() {
     window.addEventListener("scroll", this.navBarScrollHandler);
@@ -233,11 +266,11 @@ export default {
         this.scrolledNavBarStyle.position = "relative";
       }
     },
-    switchBool(){
+    switchBool() {
       this.showRender = !this.showRender;
     },
-    clearNum(){
-      this.counter =0;
+    clearNum() {
+      this.counter = 0;
     }
   }
 };
@@ -275,5 +308,7 @@ export default {
   align-items: center;
 }
 
-
+button{
+  
+}
 </style>

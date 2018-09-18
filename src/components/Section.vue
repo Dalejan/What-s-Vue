@@ -14,7 +14,7 @@ export default {
 <style scoped>
 .section-content {
   padding: 3rem 5% 0 5%;
-  max-width: 1280px;
+  max-width: 1500px;
   width: 100%;
   min-height: 10rem;
   height: calc(100vh - 3rem);

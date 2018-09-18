@@ -18,7 +18,7 @@ export default {
   box-sizing: border-box;
 }
 html {
-  font-size: 1.2vw;
+  font-size: 1vw;
 }
 
 body {
@@ -32,11 +32,12 @@ body {
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 ::-webkit-scrollbar {
-  width: 3px;
+  width: 8px;
+  height: 8px;
   background-color: #f5f5f5;
 }
 ::-webkit-scrollbar-thumb {
