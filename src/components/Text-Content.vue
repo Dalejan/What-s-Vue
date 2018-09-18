@@ -16,7 +16,7 @@ export default {
   name: "TextContent",
   props: {
     title: String,
-    subtitle: String,
+    subtitle: String
   },
   filters: {
     capitalize: function(value) {
@@ -28,31 +28,33 @@ export default {
 };
 </script>
 <style>
-
-h1,h2,h3,h4 {
-    margin: 0;
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
 }
 
 .text-content-container {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
 }
 
 .text-content-header {
-    color: rgb(17, 31, 17);
-    font-weight: bolder;
-    margin: 0.4rem 0rem;
-    border-bottom: solid rgba(153, 153, 153, 0.5) 1px;
+  color: rgb(17, 31, 17);
+  font-weight: bolder;
+  margin: 0.4rem 0rem;
+  border-bottom: solid #42b983 1.5px;
 }
 
 .text-content-subheader {
-    color: rgb(153, 153, 153);
-    font-weight: 500;
-    margin: 0.5rem 0rem;
+  color: rgb(153, 153, 153);
+  font-weight: 500;
+  margin: 0.5rem 0rem;
 }
 
 .text-content-paragraph {
-    text-align: justify;
+  text-align: justify;
 }
 </style>

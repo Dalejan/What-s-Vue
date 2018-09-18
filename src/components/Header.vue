@@ -4,7 +4,7 @@
           INICIO
       </div>
       <div class="item">
-          TUTORIAL
+          <a href="https://vuejs.org/v2/guide/installation.html">TUTORIAL</a>
       </div>
   </div>
 </template>

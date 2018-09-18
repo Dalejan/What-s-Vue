@@ -1,7 +1,5 @@
 <template>
-<div>
-    <div class="feature-title">{{name}}</div>
-    <div class="feature-container">
+<div class="feature-container">
     <FeatureDescription :name= "name" class="feature-subcontent">
         <slot name="description"></slot>
     </FeatureDescription>
@@ -12,7 +10,6 @@
         <slot name="example"></slot>
     </FeatureExample>
 </div> 
-</div>
 </template>
 
 <script>
@@ -37,13 +34,11 @@ export default {
 .feature-container {
   display: flex;
   flex-flow: nowrap row;
+  margin: 4rem 0rem;
 }
 .feature-subcontent {
   padding: 20px;
   text-justify: auto;
-}
-.feature-title{
-      font-size: 1.2em;
-    height: 1.3em;
+  width: 40%;
 }
 </style>
